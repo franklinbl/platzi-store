@@ -1,0 +1,18 @@
+
+<mat-card class="card" *ngIf="product">
+
+  <div class="crop-image">
+    <img [src]="product.image">
+  </div>
+
+  <mat-card-content>
+    <h2>{{ product.title | uppercase }}</h2>
+    <h3>{{ product.price | currency }}</h3>
+    <p>{{ product.description | slice:0:10 }}</p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button (click)="updateProduct()" mat-raised-button color="primary">Actualizar</button>
+    <button (click)="deleteProduct()" mat-raised-button color="primary">Eliminar</button>
+  </mat-card-actions>
+</mat-card>
